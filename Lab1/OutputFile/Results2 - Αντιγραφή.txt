@@ -1,0 +1,81 @@
+# Image ID	 Noise Type	 Filter Name 	 Performance score 1 value 	 Performance score 2 value 	 Performance score 3 value
+3452722.jpg 	 gauss 	 Averaging blur Filter 	 0.7464 	 327.2667 	 0.0994
+3452722.jpg 	 gauss 	 Gauss blur Filter 	 0.8624 	 162.9866 	 0.0701
+3452722.jpg 	 gauss 	 Median Filter 	 0.8177 	 211.7413 	 0.0799
+3452722.jpg 	 gauss 	 Bilateral Filter 	 0.9982 	 0.4246 	 0.0036
+569585.jpg 	 gauss 	 Averaging blur Filter 	 0.4570 	 755.5946 	 0.1556
+569585.jpg 	 gauss 	 Gauss blur Filter 	 0.6913 	 458.4148 	 0.1212
+569585.jpg 	 gauss 	 Median Filter 	 0.5113 	 718.6504 	 0.1517
+569585.jpg 	 gauss 	 Bilateral Filter 	 0.9989 	 0.6181 	 0.0044
+6807g0.jpg 	 gauss 	 Averaging blur Filter 	 0.7217 	 269.1657 	 0.0933
+6807g0.jpg 	 gauss 	 Gauss blur Filter 	 0.8649 	 130.6088 	 0.0650
+6807g0.jpg 	 gauss 	 Median Filter 	 0.8042 	 172.1800 	 0.0746
+6807g0.jpg 	 gauss 	 Bilateral Filter 	 0.9974 	 1.4935 	 0.0070
+69tftf.jpg 	 salt&peper 	 Averaging blur Filter 	 0.4393 	 263.6803 	 0.1004
+69tftf.jpg 	 salt&peper 	 Gauss blur Filter 	 0.3341 	 360.1933 	 0.1173
+69tftf.jpg 	 salt&peper 	 Median Filter 	 0.8688 	 32.5837 	 0.0353
+69tftf.jpg 	 salt&peper 	 Bilateral Filter 	 0.0549 	 3259.2387 	 0.3530
+6t8787t8.jpg 	 gauss 	 Averaging blur Filter 	 0.6287 	 82.8216 	 0.1339
+6t8787t8.jpg 	 gauss 	 Gauss blur Filter 	 0.7259 	 59.1761 	 0.1132
+6t8787t8.jpg 	 gauss 	 Median Filter 	 0.6165 	 90.0210 	 0.1396
+6t8787t8.jpg 	 gauss 	 Bilateral Filter 	 0.9971 	 0.4658 	 0.0100
+76ty78y.jpg 	 salt&peper 	 Averaging blur Filter 	 0.4627 	 504.2638 	 0.2650
+76ty78y.jpg 	 salt&peper 	 Gauss blur Filter 	 0.4096 	 577.9821 	 0.2837
+76ty78y.jpg 	 salt&peper 	 Median Filter 	 0.9216 	 80.7457 	 0.1060
+76ty78y.jpg 	 salt&peper 	 Bilateral Filter 	 0.1404 	 4051.6928 	 0.7511
+78y78y.jpg 	 gauss 	 Averaging blur Filter 	 0.8516 	 27.6018 	 0.0993
+78y78y.jpg 	 gauss 	 Gauss blur Filter 	 0.9081 	 16.1129 	 0.0758
+78y78y.jpg 	 gauss 	 Median Filter 	 0.8505 	 28.6858 	 0.1012
+78y78y.jpg 	 gauss 	 Bilateral Filter 	 0.9862 	 3.4151 	 0.0349
+78y798yu.jpg 	 salt&peper 	 Averaging blur Filter 	 0.4711 	 393.4230 	 0.1094
+78y798yu.jpg 	 salt&peper 	 Gauss blur Filter 	 0.3931 	 464.2235 	 0.1188
+78y798yu.jpg 	 salt&peper 	 Median Filter 	 0.8574 	 98.3129 	 0.0547
+78y798yu.jpg 	 salt&peper 	 Bilateral Filter 	 0.1134 	 3478.4355 	 0.3252
+87y87h7.jpg 	 gauss 	 Averaging blur Filter 	 0.5932 	 111.0207 	 0.1458
+87y87h7.jpg 	 gauss 	 Gauss blur Filter 	 0.7237 	 72.0895 	 0.1175
+87y87h7.jpg 	 gauss 	 Median Filter 	 0.5828 	 118.2089 	 0.1505
+87y87h7.jpg 	 gauss 	 Bilateral Filter 	 0.9983 	 0.4256 	 0.0090
+8u8uh7.jpg 	 salt&peper 	 Averaging blur Filter 	 0.3687 	 531.1065 	 0.1646
+8u8uh7.jpg 	 salt&peper 	 Gauss blur Filter 	 0.4389 	 508.7213 	 0.1610
+8u8uh7.jpg 	 salt&peper 	 Median Filter 	 0.5845 	 335.2626 	 0.1307
+8u8uh7.jpg 	 salt&peper 	 Bilateral Filter 	 0.2162 	 3122.8783 	 0.3990
+8yt778y.jpg 	 gauss 	 Averaging blur Filter 	 0.8040 	 295.7458 	 0.1517
+8yt778y.jpg 	 gauss 	 Gauss blur Filter 	 0.8755 	 176.0351 	 0.1170
+8yt778y.jpg 	 gauss 	 Median Filter 	 0.8392 	 207.2946 	 0.1270
+8yt778y.jpg 	 gauss 	 Bilateral Filter 	 0.9958 	 0.4549 	 0.0059
+989uj.jpg 	 gauss 	 Averaging blur Filter 	 0.9221 	 88.8819 	 0.0552
+989uj.jpg 	 gauss 	 Gauss blur Filter 	 0.9606 	 50.3249 	 0.0415
+989uj.jpg 	 gauss 	 Median Filter 	 0.9304 	 87.3040 	 0.0547
+989uj.jpg 	 gauss 	 Bilateral Filter 	 0.9964 	 0.3592 	 0.0035
+98u8u8.jpg 	 gauss 	 Averaging blur Filter 	 0.8321 	 119.7456 	 0.0889
+98u8u8.jpg 	 gauss 	 Gauss blur Filter 	 0.9113 	 63.1511 	 0.0645
+98u8u8.jpg 	 gauss 	 Median Filter 	 0.8780 	 95.0999 	 0.0792
+98u8u8.jpg 	 gauss 	 Bilateral Filter 	 0.9886 	 4.0801 	 0.0164
+bvhui.jpg 	 salt&peper 	 Averaging blur Filter 	 0.4377 	 848.9649 	 0.2001
+bvhui.jpg 	 salt&peper 	 Gauss blur Filter 	 0.5243 	 683.8246 	 0.1796
+bvhui.jpg 	 salt&peper 	 Median Filter 	 0.6514 	 462.5844 	 0.1477
+bvhui.jpg 	 salt&peper 	 Bilateral Filter 	 0.3081 	 3209.5976 	 0.3892
+hhoiuhouh.jpg 	 gauss 	 Averaging blur Filter 	 0.9093 	 57.0009 	 0.0614
+hhoiuhouh.jpg 	 gauss 	 Gauss blur Filter 	 0.9538 	 29.7138 	 0.0443
+hhoiuhouh.jpg 	 gauss 	 Median Filter 	 0.9406 	 35.3324 	 0.0484
+hhoiuhouh.jpg 	 gauss 	 Bilateral Filter 	 0.9969 	 0.3703 	 0.0050
+IMG_20191208_211918.jpg 	 salt&peper 	 Averaging blur Filter 	 0.4762 	 608.8806 	 0.1681
+IMG_20191208_211918.jpg 	 salt&peper 	 Gauss blur Filter 	 0.4659 	 551.0484 	 0.1600
+IMG_20191208_211918.jpg 	 salt&peper 	 Median Filter 	 0.8334 	 269.0006 	 0.1118
+IMG_20191208_211918.jpg 	 salt&peper 	 Bilateral Filter 	 0.2024 	 3489.3951 	 0.4025
+IMG_20191208_212124.jpg 	 salt&peper 	 Averaging blur Filter 	 0.3456 	 362.3302 	 0.1322
+IMG_20191208_212124.jpg 	 salt&peper 	 Gauss blur Filter 	 0.3684 	 387.4405 	 0.1367
+IMG_20191208_212124.jpg 	 salt&peper 	 Median Filter 	 0.5238 	 184.7267 	 0.0944
+IMG_20191208_212124.jpg 	 salt&peper 	 Bilateral Filter 	 0.1349 	 2970.2947 	 0.3786
+y7gyh.jpg 	 salt&peper 	 Averaging blur Filter 	 0.4758 	 170.0297 	 0.0823
+y7gyh.jpg 	 salt&peper 	 Gauss blur Filter 	 0.3574 	 256.0623 	 0.1010
+y7gyh.jpg 	 salt&peper 	 Median Filter 	 0.8826 	 17.1113 	 0.0261
+y7gyh.jpg 	 salt&peper 	 Bilateral Filter 	 0.0506 	 2806.9377 	 0.3342
+yt7t.jpg 	 gauss 	 Averaging blur Filter 	 0.4638 	 737.4730 	 0.2133
+yt7t.jpg 	 gauss 	 Gauss blur Filter 	 0.6476 	 491.0543 	 0.1741
+yt7t.jpg 	 gauss 	 Median Filter 	 0.4826 	 723.9700 	 0.2114
+yt7t.jpg 	 gauss 	 Bilateral Filter 	 0.9994 	 0.5922 	 0.0060
+yuy78v.jpg 	 gauss 	 Averaging blur Filter 	 0.9615 	 7.7715 	 0.0193
+yuy78v.jpg 	 gauss 	 Gauss blur Filter 	 0.9835 	 3.1323 	 0.0123
+yuy78v.jpg 	 gauss 	 Median Filter 	 0.9741 	 4.5247 	 0.0148
+yuy78v.jpg 	 gauss 	 Bilateral Filter 	 0.9962 	 0.4577 	 0.0047

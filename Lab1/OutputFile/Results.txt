@@ -1,0 +1,5 @@
+# Filter Name | Performance score 1 value | Performance score 2 value | Performance score 3 value
+Averaging blur 0.8040 295.7408 0.1517
+Gauss blur 0.8755 176.0373 0.1170
+Median blur 0.8392 207.3009 0.1270
+Bilateral blur 0.9958 0.4544 0.0059
