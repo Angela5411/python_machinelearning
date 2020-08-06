@@ -1,0 +1,167 @@
+import keras
+from keras.models import Sequential
+from keras.layers import Dense, Dropout, Flatten
+from keras.layers import Conv2D, MaxPooling2D
+import matplotlib.pyplot as plt
+import random
+import pickle
+
+import numpy as np
+from sklearn.model_selection import train_test_split
+
+batch_size = 10000*5
+num_classes = 10
+epochs = 1
+label_names=[]
+# input image dimensions
+img_rows, img_cols = 32, 32
+
+def classNames(file):
+    with open(file, 'rb') as fo:
+        dict = pickle.load(fo, encoding='ASCII')
+    return dict['label_names']
+
+def unpickle(file):
+    with open(file, 'rb') as fo:
+        dict = pickle.load(fo, encoding='bytes')
+        # data -- a 10000x3072 numpy array of uint8s. Each row of the array stores a 32x32 colour image.
+        # The first 1024 entries contain the red channel values, the next 1024 the green, and the final 1024 the blue.
+        # The image is stored in row-major order, so that the first 32 entries of the array are the red channel values of the first row of the image.
+        # labels -- a list of 10000 numbers in the range 0-9. The number at index i indicates the label of the ith image in the array data.
+        X=np.array(dict[b'data'])
+        Y=np.array(dict[b'labels'])
+        x=[]
+        for i in X:#100000 rows/images
+            x.append(np.reshape(np.transpose(np.reshape(i,(3,1024))),(32,32,3)))
+            #reshape into 3 rows(r,g,b) --> transpose so that each row refers to a pixel--> reshape so that each row is a row of 32 pixels
+    return x,Y
+            #r=i[0:1024]    #g=i[1024:1024*2]   #b=i[1024*2:1024*3]   #pixel=[]            #for j in range(0,1024):      # pixel.append([r[j],g[j],b[j]])#for j in range(32):      #   im.append(pixel[j*32:(j+1)*32]) #x.append(pixel)
+
+
+
+# the data, split between train and test sets
+fileNameToLoad = '../InputData/dataset/data_batch_' #define the txt file to pass the examples
+#creates a big 100 elemenents list where each element is a sublist of 3 numbers(InputValue Func1Output Func2Output)
+X=[]
+Y=[]
+for i in range(1,6):
+    listX,listY=(unpickle(fileNameToLoad+str(i)))
+    X.extend(listX)
+    Y.extend(listY)
+X=np.array(X)
+Y=np.array(Y)
+
+label_names=classNames('../InputData/dataset/batches.meta')
+#plt.imshow(X[1])
+#plt.show()
+
+x_train, x_valid, y_train, y_valid = train_test_split(X, Y,train_size=0.97 ,test_size=0.03)
+
+
+# plot 10 images as gray scale
+#
+# plt.subplot(331)
+# plt.imshow(x_train[0], cmap=plt.get_cmap('gray'))
+# plt.subplot(332)
+# plt.imshow(x_train[1], cmap=plt.get_cmap('gray'))
+# plt.subplot(333)
+# plt.imshow(x_train[2], cmap=plt.get_cmap('gray'))
+# plt.subplot(334)
+# plt.imshow(x_train[3], cmap=plt.get_cmap('gray'))
+# plt.subplot(335)
+# plt.imshow(x_train[4], cmap=plt.get_cmap('gray'))
+# plt.subplot(336)
+# plt.imshow(x_train[5], cmap=plt.get_cmap('gray'))
+# plt.subplot(337)
+# plt.imshow(x_train[6], cmap=plt.get_cmap('gray'))
+# plt.subplot(338)
+# plt.imshow(x_train[7], cmap=plt.get_cmap('gray'))
+# plt.subplot(339)
+# plt.imshow(x_train[8], cmap=plt.get_cmap('gray'))
+
+# show the plot
+plt.show()
+plt.pause(4)
+print(np.shape(x_train))
+print(np.shape(x_valid))
+# no need to reshape anything. Already shaped
+#x_train = x_train.reshape(len(x_train), 32, 32, 3)
+#x_valid = x_valid.reshape(len(x_valid), 32, 32, 3)
+
+print('x_train shape:', x_train.shape)
+print(x_train.shape[0], 'train samples')
+print(x_valid.shape[0], 'validate samples')
+
+# convert class vectors to binary class matrices
+y_train = keras.utils.to_categorical(y_train, num_classes)
+y_valid = keras.utils.to_categorical(y_valid, num_classes)
+
+# here we define and load the model
+model = Sequential()
+model.add(Conv2D(32, kernel_size=(3, 3),
+                 activation='relu',
+                 input_shape=(32, 32, 3)))
+model.add(Conv2D(64, (3, 3), activation='relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.25))
+model.add(Flatten())
+model.add(Dense(128, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(num_classes, activation='softmax'))
+
+model.compile(loss=keras.losses.categorical_crossentropy,
+              optimizer=keras.optimizers.Adadelta(),
+              metrics=['accuracy'])
+
+# print model summary
+model.summary()
+
+# fit model parameters, given a set of training data
+model.fit(x_train, y_train,
+          batch_size=batch_size,
+          epochs=epochs,
+          verbose=1,
+          validation_data=(x_valid, y_valid))
+
+
+# saving the trained model
+model_name = 'MNIST_CNN.h5'
+model.save(model_name)
+
+# loading a trained model & use it over test data
+loaded_model = keras.models.load_model(model_name)
+
+y_train_predictions_vectorized = loaded_model.predict(x_train)
+y_train_predictions = np.argmax(y_train_predictions_vectorized, axis=1)
+
+# illustrate few results
+# class_to_demonstrate = random.randint(0, 9)
+
+# find 9 images the corespond to the above class,
+# using the CNN predictions as outputs
+
+class_to_demonstrate = 0
+while (sum(y_train_predictions == class_to_demonstrate) > 4):
+    tmp_idxs_to_use = np.where(y_train_predictions == class_to_demonstrate)
+
+    # # create new plot window
+    # plt.figure()
+    #
+    # # plot 4 images as gray scale
+    # plt.subplot(221)
+    # plt.imshow(x_valid[tmp_idxs_to_use[0][0], :, :, 0], cmap=plt.get_cmap('gray'))
+    # plt.subplot(222)
+    # plt.imshow(x_valid[tmp_idxs_to_use[0][1], :, :, 0], cmap=plt.get_cmap('gray'))
+    # plt.subplot(223)
+    # plt.imshow(x_valid[tmp_idxs_to_use[0][2], :, :, 0], cmap=plt.get_cmap('gray'))
+    # plt.subplot(224)
+    # plt.imshow(x_valid[tmp_idxs_to_use[0][3], :, :, 0], cmap=plt.get_cmap('gray'))
+    # tmp_title = 'Digits considered as' + str(class_to_demonstrate)
+    # plt.suptitle(tmp_title)
+    #
+    # # show the plot
+    # plt.show()
+    # plt.pause(2)
+
+    # update the class to demonstrate index
+    class_to_demonstrate = class_to_demonstrate + 1
